@@ -1,22 +1,10 @@
 class UsersController < ApplicationController
     def create
-        user = User.find_by(
-            username: params[:username]
+        user = User.create(
+            email: params[:email],
+            username: params[:username],
+            password: params[:password]
         )
-
-        if !user 
-            render {error: 'Invalid Login'}, status: :unauthorized
-        else
-            if user.authenticate(params[:password])
-                secret_key = Rails.application.secrets.secret_key_base[0]
-                token = JWT.encode({
-                    user_id: user.id,
-                    username: user.username
-                }, secret_key)
-                render json: {token: token}
-            else
-                render json: {message: 'Invalid'}, status: :unauthorized
-            end 
-        end 
+        render json: user
     end 
 end
