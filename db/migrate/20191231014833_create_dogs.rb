@@ -4,9 +4,10 @@ class CreateDogs < ActiveRecord::Migration[6.0]
       t.string :breed
       t.string :weight
       t.string :height
-      t.string :name
       t.string :life_span
       t.string :temperament
+      t.string :bred_for
+      t.string :image_url
       t.references :user
 
       t.timestamps
