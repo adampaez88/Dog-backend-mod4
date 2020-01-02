@@ -8,6 +8,7 @@ class CreateDogs < ActiveRecord::Migration[6.0]
       t.string :temperament
       t.string :bred_for
       t.string :image_url
+      t.string :info_url
       t.references :user
 
       t.timestamps

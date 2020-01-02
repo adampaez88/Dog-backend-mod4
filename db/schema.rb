@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_12_31_015121) do
     t.string "temperament"
     t.string "bred_for"
     t.string "image_url"
+    t.string "info_url"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
